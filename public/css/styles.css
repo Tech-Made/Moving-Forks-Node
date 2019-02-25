@@ -1,0 +1,89 @@
+img.login-bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+        
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+img.events-bg {
+    z-index: -1;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+        
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+input#access-code {
+    background: white;
+    margin-top: 40px;
+}
+
+input#username {
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+}
+#login-submit {
+    background-color: #ffc107;;
+    border-color: #ffc107;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+input#login-submit:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffc107;
+}
+#login-agree {
+    color: white;
+    font-family: "montserrat-light", sans-serif;
+    font-size: 11px;
+}
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.login-bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+
+.center {
+    text-align: center;
+    margin: auto;
+    margin-top: 190px;
+}
+
+/* EVENT PAGE STYLES */
+
+.row.center.event-container {
+    margin-top: 150px;
+}
+.event-box {
+    margin: 10px;
+    width:260px;
+    height: 260px;
+    background-color: white;
+    padding: 18px;
+}
+.event-box h1 {
+    font-size:30px;
+    text-align: left;
+}
