@@ -1,0 +1,28 @@
+.login {
+  margin-top: 70px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.login .tos {
+  font-size: 12px;
+}
+.login img {
+  max-width: 21em;
+}
+.login input {
+  background-color: white;
+  color: black;
+}
+.login button {
+  background-color: #ffc107;
+  color: black;
+  border-color: #ffc107;
+}
+
+.form-control {
+  width: 100% !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

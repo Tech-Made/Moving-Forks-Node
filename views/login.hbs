@@ -1,0 +1,45 @@
+{{> navbar}}
+
+<section class="login row">
+    <div class="col-md-4 center">
+        <div class="form-group">
+                <img src="/images/logo-white.png" alt="" class="login-logo">
+            </div>
+        <div class="form-group">
+            <input type="text" name="accesscode"  id="access-code" tabindex="1" class="form-control text-center" placeholder="Access Code" value="">
+        </div>
+        <div class="form-group">
+            <p id="login-agree" class="tos" tabindex="1">By entering you agree to our terms of service.</p>
+        </div>
+        <button name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">Log In</button>
+    </div>
+</section>
+
+<script>
+
+(function() {
+    console.log("checking access code");
+    const btnLogIn = document.getElementById('login-submit');
+    localStorage.setItem('private_code', { accessCode } );
+    const private_code = localStorage.getItem('private_code');
+
+    btnLogIn.addEventListener('click', e => {
+        console.log("clicked");
+        const txtAccessCode = document.getElementById('access-code').value; // user login access code
+        localStorage.setItem('user_code', txtAccessCode);
+        var user_code = localStorage.getItem('user_code');
+        console.log("User Code:", user_code);
+
+        if (txtAccessCode == { accessCode } ) {
+            {{!-- // console.log("Successful Access Code Entered"); --}}
+            // console.log("CHECK FOR CODE: ",check_for_code);
+            // console.log(check_user__entered_code);
+            window.open('/events', '_self', true);
+        }
+        else{
+            alert("Incorrect Access Code");
+        }
+    });
+})();
+
+</script>

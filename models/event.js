@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Update = require("../models/update");
-const User = require("../models/update");
+// const User = require("./update");
 
-const ProjectSchema = new Schema({
+const EventSchema = new Schema({
     createdAt: { type: Date },
     updatedAt: { type: Date },
     title: { type: String, required: true },
@@ -21,7 +20,7 @@ const ProjectSchema = new Schema({
     paymentsCompleted: { type: Array}
 });
 
-ProjectSchema.pre("save", function(next) {
+EventSchema.pre("save", function(next) {
     // SET createdAt AND updatedAt
     const now = new Date();
     this.updatedAt = now;
@@ -33,5 +32,5 @@ ProjectSchema.pre("save", function(next) {
     next();
   });
   
-  module.exports = mongoose.model("Project", ProjectSchema);
+  module.exports = mongoose.model("Event", EventSchema);
   

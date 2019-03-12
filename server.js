@@ -29,17 +29,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const checkAuth = require('./middleware/checkAuth');
-
+// const checkAuth = require('./middleware/checkAuth');
 // Create routers for every route in app
 const userRouter = require('./routes/user');
-const adminRouter = require('./routes/admin');
-const projectRouter = require('./routes/project');
+const projectRouter = require('./routes/events');
+// const adminRouter = require('./routes/admin');
 
-app.use(checkAuth);
+// app.use(checkAuth);
 app.use(userRouter);
 app.use(projectRouter);
-app.use(adminRouter);
+// app.use(adminRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port);

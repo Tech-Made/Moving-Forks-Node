@@ -1,14 +1,25 @@
-const router = require('express').Router();
+const events = require('express').Router();
 const User = require("../models/user");
-const Project = require("../models/project");
-const Update = require("../models/update");
+const Event = require("../models/event");
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 const SendGrid = require('./sendGrid');
 const stripe = require("stripe")("sk_test_CKhY3B72JlPjNAM0S8MmQscw");
 
+events.get('/events', (req,res) => {
+    res.render('events');
+    // const currentUser = req.user;
+    // if (currentUser) {
+    //     events.find().then((events) => {
+    //         res.render('events', { events });
+    //     });
+    // } else {
+    //     res.render('login', { layout: 'no-footer'});
+    // };
+});
+
 // POST A NEW WEBSITE REQUEST FROM NEW CLIENT DASHBOARD 
-router.post('/dashboard', function(req, res, next) {
+events.post('/dashboard', function(req, res, next) {
     const project = new Project(req.body);
     project.save().then(() => {
         User.findByIdAndUpdate(req.user._id, { $push: { projects: project._id } })
@@ -20,7 +31,7 @@ router.post('/dashboard', function(req, res, next) {
 })
 
 // GET DASHBOARD FOR ADMIN OR CLIENT
-router.get('/dashboard', function(req, res, next) {
+events.get('/dashboard', function(req, res, next) {
     if (req.user.isAdmin == false && req.user.projects.length > 0) {
         Project.findById(req.user.projects).populate('updates')
         .then(project => {
@@ -48,7 +59,7 @@ router.get('/dashboard', function(req, res, next) {
 });
 
 // CLIENT SEND FEEDBACK TO ADMINS UPDATE
-router.post('/dashboard/:updateId/feedback', (req,res) => {
+events.post('/dashboard/:updateId/feedback', (req,res) => {
     updateId = req.params.updateId;
     Update.findById(updateId)
     .then(update => {
@@ -62,7 +73,7 @@ router.post('/dashboard/:updateId/feedback', (req,res) => {
 });
 
 // CLIENT CHARGE
-router.post('/dashboard/:projectId/charge', (req, res, next) => {
+events.post('/dashboard/:projectId/charge', (req, res, next) => {
     console.log("IN THIS ROUTE");
     
     // Token is created using Checkout or Elements!
@@ -97,9 +108,9 @@ router.post('/dashboard/:projectId/charge', (req, res, next) => {
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+events.get('/', function(req, res, next) {
     const currentUser = req.user;
     res.render('index', {currentUser});
 });
   
-module.exports = router;
+module.exports = events;

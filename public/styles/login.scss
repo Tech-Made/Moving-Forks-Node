@@ -1,0 +1,28 @@
+.login {
+    margin-top: 70px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    .tos {
+        font-size: 12px;
+    }
+    img {
+        max-width: 21em;
+    }
+    input {
+        background-color: white;
+        color: black;
+    }
+    button {
+        background-color: #ffc107;;
+        color: black;
+        border-color: #ffc107;;
+    }
+}
+
+.form-control {
+    width: 100% !important;
+}
+
