@@ -3,17 +3,15 @@ const users = express.Router();
 const User = require("../models/user");
 // const SendGrid = require('./sendGrid');
 
-users.get('/login', (req,res) => {
+users.get('/login', (req, res) => {
     const type = "admin";
     User.findOne({ type }, "type accessCode").then(admin => {
-        console.log("admin:", admin);
         const accessCode = admin.accessCode;
-        console.log("accessCode:", admin.accessCode);
-        res.render('login', { layout: 'no-footer', accessCode }); 
+        res.render('login', { accessCode: accessCode }); 
     });
 });
 
-users.post('/login', (req,res) => {
+users.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     
@@ -54,7 +52,7 @@ users.post("/request-invite", (req, res) => {
     });
 });
 
-users.get('/request-invite', (req,res) => {
+users.get('/request-invite', (req, res) => {
     res.render('request-invite', {layout: 'request-layout'});
 });
 
