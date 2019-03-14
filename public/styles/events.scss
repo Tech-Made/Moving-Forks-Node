@@ -1,0 +1,134 @@
+.dashboard {
+    .row {
+        width: 100% !important;
+    }
+    h1 {
+        margin: 0 auto !important;
+    }
+    padding-top: 100px;
+    text-align: center;
+    #cardContainers{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin: 50px auto;
+        width: 950px;
+        grid-gap: 20px;
+        @media(max-width:767px){
+           grid-template-columns: auto !important;
+           width: 250px !important;
+        }
+        @media(max-width:1025px){
+          grid-template-columns: auto auto;
+          width: 700px;
+        }
+    }
+    .full-card {
+        overflow: hidden;
+        background-color: #fff;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: -3px 5px 20px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: -3px 5px 20px 0 rgba(0,0,0,.1);
+        box-shadow: -3px 5px 20px 0 rgba(0,0,0,.1);
+        -webkit-transition: all .3s cubic-bezier(0,0,.2,1);
+        -moz-transition: all .3s cubic-bezier(0,0,.2,1);
+        transition: all .3s cubic-bezier(0,0,.2,1);
+        .card-info {
+            margin-top: 19px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 19px;
+            .card-title {
+                padding-bottom: 25px !important;
+                text-align: left;
+                color: #1e1d1d;
+                line-height: 1.3em;
+                font-size: 20px;
+                font-weight: 550;
+                font-family: "montserrat-medium", sans-serif;
+                margin-bottom: 54px;
+                .date {
+                    margin-right: 5px;
+                    // border-radius: 5px;
+                    // border: gray solid;
+                    // background-color: #fff;
+                    color: #adadad;
+                    font-weight: 300;
+                    display: inline-block;
+                    // padding: 5px 10px;
+                    // border-width: .5px;
+                }
+            }
+            .cityndate {
+                .city, .card-date {
+                    font-family: "montserrat-medium", sans-serif;
+                    float: left;
+                    font-size: 16px;
+                    letter-spacing: .5px;
+                    margin-bottom: 19px;
+                    .fa-map-marker-alt {
+                        font-size: 20px;
+                        color: #ffc107;
+                    }
+                    .in {
+                        display: inline-block;
+                        font-size: 15px;
+                        color: #adadad;
+                    }
+                }
+                .card-date {
+                    margin-bottom: 19px !important;
+                    margin: 0 auto;
+                    height: auto;
+                    line-height: normal;
+                    float: right;
+                    background-color: transparent;
+                    color: #ffc107;
+                    padding: 5px 22px;
+                    border: 2px solid;
+                    border-radius: 3px;
+                
+                }
+                .card-date:hover {
+                    background-color: #fff;
+                    color: #000000;
+                    border-color: #000000;
+                }
+            }
+        }
+    }
+    .card {
+        padding: 10px;
+        min-height: 180px;
+        color: #ffffff;
+        background-blend-mode: overlay;
+        background-position: 50% 50% !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        // border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+    img.bg {
+        z-index: -1;
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+          
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+          
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    @media screen and (max-width: 1024px) { /* Specific to this particular image */
+        img.bg {
+            left: 50%;
+            margin-left: -512px;   /* 50% */
+        }
+    }
+}

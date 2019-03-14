@@ -25,4 +25,135 @@
   width: 100% !important;
 }
 
+.dashboard {
+  padding-top: 100px;
+  text-align: center;
+}
+.dashboard .row {
+  width: 100% !important;
+}
+.dashboard h1 {
+  margin: 0 auto !important;
+}
+.dashboard #cardContainers {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 50px auto;
+  width: 950px;
+  grid-gap: 20px;
+}
+@media (max-width: 767px) {
+  .dashboard #cardContainers {
+    grid-template-columns: auto !important;
+    width: 250px !important;
+  }
+}
+@media (max-width: 1025px) {
+  .dashboard #cardContainers {
+    grid-template-columns: auto auto;
+    width: 700px;
+  }
+}
+.dashboard .full-card {
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: -3px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -3px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: -3px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+.dashboard .full-card .card-info {
+  margin-top: 19px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 19px;
+}
+.dashboard .full-card .card-info .card-title {
+  padding-bottom: 25px !important;
+  text-align: left;
+  color: #1e1d1d;
+  line-height: 1.3em;
+  font-size: 20px;
+  font-weight: 550;
+  font-family: "montserrat-medium", sans-serif;
+  margin-bottom: 54px;
+}
+.dashboard .full-card .card-info .card-title .date {
+  margin-right: 5px;
+  color: #adadad;
+  font-weight: 300;
+  display: inline-block;
+}
+.dashboard .full-card .card-info .cityndate .city, .dashboard .full-card .card-info .cityndate .card-date {
+  font-family: "montserrat-medium", sans-serif;
+  float: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 19px;
+}
+.dashboard .full-card .card-info .cityndate .city .fa-map-marker-alt, .dashboard .full-card .card-info .cityndate .card-date .fa-map-marker-alt {
+  font-size: 20px;
+  color: #ffc107;
+}
+.dashboard .full-card .card-info .cityndate .city .in, .dashboard .full-card .card-info .cityndate .card-date .in {
+  display: inline-block;
+  font-size: 15px;
+  color: #adadad;
+}
+.dashboard .full-card .card-info .cityndate .card-date {
+  margin-bottom: 19px !important;
+  margin: 0 auto;
+  height: auto;
+  line-height: normal;
+  float: right;
+  background-color: transparent;
+  color: #ffc107;
+  padding: 5px 22px;
+  border: 2px solid;
+  border-radius: 3px;
+}
+.dashboard .full-card .card-info .cityndate .card-date:hover {
+  background-color: #fff;
+  color: #000000;
+  border-color: #000000;
+}
+.dashboard .card {
+  padding: 10px;
+  min-height: 180px;
+  color: #ffffff;
+  background-blend-mode: overlay;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.dashboard img.bg {
+  z-index: -1;
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 1024px) {
+  .dashboard {
+    /* Specific to this particular image */
+  }
+  .dashboard img.bg {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

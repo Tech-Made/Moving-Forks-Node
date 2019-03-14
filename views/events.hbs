@@ -1,10 +1,18 @@
 <section class="dashboard">
     <img src="../images/events/eventbg.jpeg" class="bg" alt="">
-
+    
     <div id="cardContainers">
-        
-    </div>
-    <!-- dashboard end -->
+        {{!-- load cards for events... for now hard code in the view. --}}
+        <div class="full-card">
+            <div class="card row" style="background:URL('../images/events/event1.jpeg')"></div>
+            <div class="card-info">
+                <h1 class="card-title"><div class="date">07/03/19</div>
+                    <br>Event Title Here</h1>'
+                <div class="cityndate">
+                    <div class="city"><div class="in">@&nbsp;</div>9:00AM</div>
+                    <button data-id="'+item.eid+'" class="card-date show-event-button">RSVP</button>
+                </div>
+            </div>           
+        </div>
+    </div>  <!-- dashboard end -->
 </section>
-
-<script src="./js/events.js"></script>

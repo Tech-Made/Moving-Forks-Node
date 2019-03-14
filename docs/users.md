@@ -14,19 +14,20 @@ Sticking with LocalStorage for login auth to events page... this is a later prio
 
 ## Admin Views
 
-admin has a form where he can create an event
+🚧 admin has a form where he can create an event
 `POST /create`
 
-admin can view all events
+🚧 admin can view all events
+
+🚧 admin can view all requests and hit a button (form) to accept or deny - upon acceptence, users are sent a welcome email with the latest access code.
 
 admin should be able to sign up and then login so i'll have to imlpement jwt auth one time for a signup, then disable it and only allow login then we can properly check that the user type is in fact admin.
 
-[ ] when users hit the events page, all events should be loaded
-
-
 ## Events
 
-[ ] when users hit the specific event page, all event specific details should be found and loaded.
+🚧 when users hit the events page, all events should be loaded
+
+🚧 when users hit the specific event page, all event specific details should be found and loaded.
 
 [ ] when users hit the specific event page, all event specific details should be found and loaded.
 
@@ -36,4 +37,17 @@ admin should be able to sign up and then login so i'll have to imlpement jwt aut
 
 ## Views
 
-Copy paste over the events dashboard
+✨ Copy paste over the homepage
+
+✨ Copy paste over the login page
+
+✨ Copy paste over the request invite page
+
+✨ Copy paste over the events dashboard
+
+🚧 Sketch up event page mockups
+
+[ ] Design a thank you page
+
+[ ] Set up basic email layouts for acceptence, and event details.
+
