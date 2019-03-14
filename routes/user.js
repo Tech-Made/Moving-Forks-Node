@@ -6,7 +6,7 @@ const User = require("../models/user");
 users.get('/login', (req, res) => {
     const type = "admin";
     User.findOne({ type }, "type accessCode").then(admin => {
-        const accessCode = admin.accessCode;
+        const accessCode = admin.accessCode
         res.render('login', { accessCode: accessCode }); 
     });
 });

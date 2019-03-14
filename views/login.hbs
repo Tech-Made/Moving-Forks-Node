@@ -19,8 +19,10 @@
 
 (function() {
     console.log("checking access code");
-    const secureCode = {{accessCode}}   
-    console.log("secureCode:", secureCode) 
+    {{!-- const secureCode = JSON.parse({{accessCode}}); --}}
+    {{!-- console.log("secureCode:", secureCode)  --}}
+    console.log("accessCode:", accessCode) 
+
     localStorage.setItem('private_code', {{accessCode}}.toString() );
     const private_code = localStorage.getItem('private_code');
 
